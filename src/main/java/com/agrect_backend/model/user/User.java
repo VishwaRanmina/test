@@ -1,6 +1,7 @@
 package com.agrect_backend.model.user;
 
 import com.agrect_backend.model.enums.Role;
+import com.agrect_backend.model.enums.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,7 +35,11 @@ public class User {
     private String profileImageUrl;
 
     @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
+
     @Column(updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 }
